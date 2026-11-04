@@ -1985,7 +1985,7 @@ function endLevel(){
   $('frescoTxt').textContent = SKIN_NAME + ' ' + frescoPct(from) + ' %';
   { const done = frescoFill >= FRESCO_N && nextDrawing(); // dessin terminé : « SAPIN ▶ » lance directement le niveau suivant, ACCUEIL ramène à l'accueil
     $('goNext').style.display = 'none'; // plus de bouton « dessin suivant »
-    $('replay').style.display = done ? 'none' : ''; $('next').textContent = done ? 'CHOISIR UN DESSIN' : 'ACCUEIL'; }
+    $('replay').style.display = done ? 'none' : ''; $('next').textContent = 'ACCUEIL'; }
   setEdge('#2d8fe8'); $('shop').style.display = 'flex'; setTimeout(() => animateFresco(from, frescoFill), 400); // fin DIRECTE : le menu de fin s'affiche tout de suite
 }
 let lastScore = 0;
@@ -2090,7 +2090,7 @@ soundUI();
     try { for (const k of Object.keys(localStorage)) if (k.startsWith('pelle-')) localStorage.removeItem(k); } catch (err) {} // dessins, pièces, skins, améliorations, parties jouées, records
     location.reload(); }); }
 function newGame(play){ // ACCUEIL (play = false) ou REJOUER (play = true, la partie repart tout de suite)
-  if (frescoFill >= FRESCO_N){ try { localStorage.removeItem('pelle-current'); sessionStorage.setItem('pelle-openmaps', '1'); } catch (e) {} location.reload(); return; } // dessin fini : retour au menu DESSINS pour en choisir un // fresque finie : le jeu se recharge sur le dessin suivant
+  if (frescoFill >= FRESCO_N){ try { localStorage.removeItem('pelle-current'); } catch (e) {} location.reload(); return; } // dessin fini : retour au menu DESSINS pour en choisir un // fresque finie : le jeu se recharge sur le dessin suivant
   $('shop').style.display = 'none'; pot = 0; level = 1;
   for (const b of BONUS.concat(PERM)) b.level = 0;
   for (const T of TEAMS) if (T.lv) for (const id in T.lv) T.lv[id] = 0;
