@@ -1368,7 +1368,7 @@ function colorHud(){
 // les pièces achètent TAILLE ou VITESSE pendant la partie. Les pièces non dépensées s'ajoutent à ta cagnotte en fin de niveau.
 const UPGRADES = true;
 const UP_PALIERS = 40, UP_COINS = 5;        // un dessin = 40 sabliers pleins ; chaque sablier = 5 pièces (≈ 200 pièces par dessin)
-const UP_SIZE_COST = 5, UP_SPEED_COST = 5, UP_COST_GROWTH = 1.45; // prix de départ, ×1,45 à chaque achat
+const UP_SIZE_COST = 5, UP_SPEED_COST = 5, UP_COST_GROWTH = 3; // prix de départ, ×3 à chaque achat
 const UP_SPEED_STEP = 0.12, UP_SPEED_MAX = Infinity;
 const UP_GAIN_COST = 10, UP_GAIN_STEP = 0.5, UP_GAIN_MAX = Infinity; // GAINS : chaque niveau = +0,5 au multiplicateur (×1 → ×1,5 → ×2…), 8 niveaux max (×5) // +12 % de vitesse par niveau, 10 niveaux max
 let upUiT = 0;
